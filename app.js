@@ -8,6 +8,7 @@ require('dotenv').config();
 // Importar rotas
 const viabilityRouter = require('./api/viability');
 const healthRouter = require('./api/health');
+const diagnosticRouter = require('./api/diagnostic');
 
 const app = express();
 
@@ -58,6 +59,9 @@ app.use(express.json({ limit: '10mb' }));
 
 // Health Check (importante para monitoramento)
 app.use('/health', healthRouter);
+
+// Diagnostico
+app.use('/api/diagnostic', diagnosticRouter);
 
 // API principal
 app.use('/api', viabilityRouter);
