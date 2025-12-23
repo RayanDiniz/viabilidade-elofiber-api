@@ -6,7 +6,7 @@ class BigQueryConfig {
         // Configurações do Vercel
         this.projectId = process.env.GCP_PROJECT_ID || 'elofiber';
         this.datasetId = process.env.BIGQUERY_DATASET || 'viabilidade';
-        this.location = process.env.BIGQUERY_REGION || 'southamerica-east1';
+        this.location = process.env.BIGQUERY_REGION || 'US';
         
         // Inicializar BigQuery de acordo com o ambiente
         this.bigquery = this.initializeBigQuery();
